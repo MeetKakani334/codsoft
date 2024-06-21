@@ -392,8 +392,6 @@ header #menu-bar{
 	color: #fff;
 
 }
- 
-
 
 /* media queries */
 @media(max-width: 991px){
@@ -513,8 +511,7 @@ header .narbar.nav-toggle{
 .order .row .image{
 	display: none;
 }
-}
-@ media (max-width: 500px){
+@media (max-width: 500px){
 	html{
 		font-size: 50%;
 	}
@@ -523,4 +520,3 @@ section{
 	padding-top: 8.5rem;
 }
 }
-
