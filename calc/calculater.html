@@ -26,7 +26,7 @@
 	background: #021A35;
 	padding: 20px;
 	border-radius: 20px;
-    box-shadow: 15px 15px 20px black;
+    box-shadow: 15px 15px 50px 2PX black;
 
 }
 .calculater form input {
@@ -56,7 +56,6 @@ form .display{
 	display: flex;
 	justify-content: flex-end;
 	margin: 20px 0;
-
 }
 
 form .display input{
@@ -92,7 +91,7 @@ form input.operator:hover{
 		<div class="calculater">
 			<form>
 				<div class="display">
-					<input type="text" name="display" placeholder="Enter your value">
+					<input type="num" name="display" placeholder="Enter your value">
 				</div>
 				<div class="a">
 					<input type="button" value="AC" onclick="display.value = '' " class="operator">
