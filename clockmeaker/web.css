@@ -33,6 +33,9 @@ html::-webkit-scrollbar-thumb{
 body{
     background: var(--bg);
 }
+section{
+    padding: 2rem 7%;
+}
 .btn{
     margin-top: 1rem;
     display: inline-block;
@@ -157,6 +160,15 @@ body{
     width: 100%;
     text-align: center;
 }
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:url(https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-men-s-luxury-watch-black-banner-image_182858.jpg);
+    background-size: cover;
+    background-position: center;
+
+}
 
 
 /* media */
@@ -166,6 +178,9 @@ body{
     }
     .header{
         padding: 1.5rem 2rem;
+    }
+    section{
+        padding: 2rem;
     }
 }
 @media (max-width:768px){
