@@ -164,10 +164,25 @@ section{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background:url(https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-men-s-luxury-watch-black-banner-image_182858.jpg);
+    background-image:url("D:/meet kakani git/codsoft/clockmeaker/img/wh.png");
     background-size: cover;
     background-position: center;
 
+}
+.home .content{
+    max-width:60rem;
+}
+.home .content h3{
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+.home .content p{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.6;
+    padding: 1rem 0;
+    color: #eee;
 }
 
 
@@ -207,6 +222,17 @@ section{
     .header .search-form{
         width: 90%;
         right: 2rem;
+    }
+    .home{
+        background-position: left;
+        justify-content: center;
+        text-align: center;
+    }
+    .home .content h3{
+        font-size: 4.5rem;
+    }
+    .home .content p{
+        font-size: 1.5rem;
     }
 }
 @media (max-width:450px){
