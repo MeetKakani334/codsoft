@@ -1,4 +1,4 @@
-a = float(input("enter valu"))
+a = float(input("enter the redius : "))
 b = 3.14
 c = 2
 d = b * (a ** c)
