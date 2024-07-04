@@ -1,5 +1,5 @@
-w = float(input("Enter The Width Of Rectangle :- "))
-l = float(input("Enter The Lenght Of Rectangle :-  "))
+w = int(input("Enter The Width Of Rectangle :- "))
+l = int(input("Enter The Lenght Of Rectangle :-  "))
 
 a = l * w
 
