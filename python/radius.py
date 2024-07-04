@@ -1,8 +1,5 @@
-a = int(input("enter the redius : "))
-b = 3.14
-c = 2
-d = b * (a ** c)
-e = c * a
-print(" the area:" , d)
-print(" the diameter:" , e)
+radius = int(input("enter the radius : "))
+diameter = 2 
+print(" the area:" , 3.14 * (radius ** diameter))
+print(" the diameter:" , (diameter * radius))
 

@@ -1,3 +1,2 @@
-c = int(input("Enter The Valu of Cube :- "))
-
-print(a)
+cube = float(input("Enter The Valu of Cube :- "))
+print(cube ** (1/3))
