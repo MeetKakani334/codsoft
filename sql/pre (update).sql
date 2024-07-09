@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `test`
 --
+-- UPDATE test set City = "Ahemdabad" WHERE id = 1;
 
 CREATE TABLE `test` (
   `Id` int(11) DEFAULT NULL,
