@@ -1,0 +1,30 @@
+1) make a table use follwing detail 
+1.col employ id 2) emp_name  3) emp-con.no 4)emp_emli 5) city 6)salery 7)expeted salry 8) dipartment 
+make a 25 entry's about tabel
+
+q.1) show me all the employ whoes first name is yashmeet
+
+
+q.2) show me all the employ whoes salry more than 50000
+ans).
+SELECT *
+FROM employee
+WHERE salary > 50000;
+
+
+q.3) show mw all the employ whome are frome ahemdabd
+ans).SELECT *
+FROM employee
+WHERE city = 'Ahmedabad';
+
+q.4) show me all the employ whose expeted salry below 50,000 worked in manengment dipartment
+ans).SELECT *
+FROM Employee
+WHERE expected_salary < 50000 AND department = 'manengment dipartment';
+
+q.5) find the avreg of whome are worked in techincal dipartment
+ans)SELECT 
+  *, 
+  (SELECT AVG(salary) FROM employee) AS average_salary
+FROM 
+  employee WHERE department = 'techincal dipartment';
