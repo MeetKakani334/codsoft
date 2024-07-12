@@ -3,6 +3,6 @@ end = float(input("Enter a end number: "))
 
 average = (start + end) / 2
 
-print(f"The average of numbers from {start} to {end} is: {average}")
+print("The average of numbers is", average)
 
 

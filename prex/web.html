@@ -62,6 +62,43 @@
                 font-size: 20px;
                 line-height: 30px;
             }
+            .aboutus{
+                width:100%;
+                height: 100%;
+                background:#002725 ;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            .aboutus img{
+                filter: drop-shadow(4px 5px 6px #d3ad7f);
+            }
+            .servies{
+                width: 100%;
+                height: 100%;
+                background: #002725;
+                color: #d3ad7f;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 20px;
+                overflow: auto;
+            }
+            .servies table{
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+            }
+            .servies table #t td{
+                width: 100%;
+                height:100%;
+                border: 6px solid black;
+            }
+            .servies table #t td img{
+                width: 100%;
+                height: 100%;
+                background: cover;
+            }
             
     </style>
 
@@ -87,7 +124,7 @@
                 <td align="right">
                   <a href="#home">Home</a> |
                   <a href="#about">About</a> |
-                  <a href="#about">Servies</a> |
+                  <a href="#servies">Servies</a> |
                   <select name="A" id="">
                     <option>PAGES</option>
                     <option>TESTIMONIAL</option>
@@ -97,14 +134,14 @@
                 </td>
               </tr>
             </table>
-          </nav><br><br>
+          </nav><br><br><br><br>
           <div id="m">
           <div class="home">
             <table width="100%">
+                <h1 align="center" id="home">Home</h1>
                 <tr>
-                    <h1 align="center" id="home">Home</h1>
                     <td>
-                        <img src="2.png" width="600px" height="400px">
+                        <img src="2.png">
                     </td>
                     <td>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nemo quidem officiis 
@@ -122,7 +159,8 @@
           <div class="aboutus">
             <table width="100%">
                 <tr>
-                    <td><h1 align="center" id="about">AboutUs</h1>
+                    <h1 align="center" id="about">AboutUs</h1>
+                    <td>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                            Fugiat nemo quidem officiis accusamus sunt veritatis praesentium 
                            laudantium iure quas inventore at ab omnis quo deleniti optio nihil totam, laboriosam dicta?
@@ -132,27 +170,27 @@
                         </p>
                     </td>
                     <td>
-                        <img src="9.jpg" width="600px" height="400px">
+                        <img src="9.png">
                     </td>
                 </tr>
             </table>
           </div><br><br><br><br><br><br>
          <div class="servies" id="servies">
-            <h1 align="center">Servies</h1>
-            <table width="100%">
-                <tr>
+            <table width="100%" cellpading="" cellspacing="12px">
+                <h1 align="center">Servies</h1>
+                <tr id="t">
                     <td align="center">Web Development</td>
                     <td align="center">Application Development</td>
                     <td align="center">AIML</td>
                     <td align="center">Data Science</td>
                 </tr>
-                <tr>
+                <tr id="t">
                     <td><img src="5.jpg" width="300px" height="200px"></td>
                     <td><img src="2.jpg" width="300px" height="200px"></td>
                     <td><img src="3.jpg" width="300px" height="200px"></td>
                     <td><img src="4.jpg" width="300px" height="200px"></td>
                 </tr>
-                <tr>
+                <tr id="t">
                     <td>
                         <iframe width="300" height="200 " src="https://www.youtube.com/embed/z0n1aQ3IxWI?si=vvXDxW159WhkUVcf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </td>

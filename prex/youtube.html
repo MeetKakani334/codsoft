@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+        }
+        .header{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center ;
+            justify-content:space-between;
+            font-size: 25px;
+        }
+        .header .h{
+            display: block;
+        }
+        .header .s{
+            width: 35%;
+            display: flex;
+            border:2px solid gray;
+            border-radius: 20px;
+            margin-left: 120px;
+
+        }
+        .header .s input[type=search]{
+            width:100%;
+            background: none;
+            margin-left: 12px;
+            border: none;
+        }
+        .header .s i{
+            margin-right: 10px;
+
+        }
+        .header .m i{
+            margin-left: -200PX;
+            margin-top: 3px;
+        }
+        .sid{
+            width: 250px;
+            height: 100vh;
+            background: rgb(255, 255, 255);
+            border-radius: 5px;
+            overflow: auto;
+            float: left;
+        }
+        .sid i{
+            margin:15%;
+            display: flex;
+            font-size: 18px;
+        }
+        .f-header{
+            display: flex;
+            justify-content: space-around;
+        }
+        .f-header p{
+            padding: 5px;
+            display:flex;
+            background: rgb(235, 234, 234);
+            border-radius: 4px;
+            align-items: center;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .f-header p:hover{
+            background: black;
+            color: white;
+        }
+        .f-header i{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ads{
+            width: 100%;
+            height: 250px;
+            background: black;
+            margin-top: 15px;
+        }
+        .ads img{
+            padding-right:-100px;
+            width: 83%;
+            height: 250px;
+        }
+        .video{
+            width: 100%;
+            height: 100%;
+          
+        }
+        .video a img{
+            width: 450px;
+            height: 300px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="h">
+        <i class='bx bx-menu' ></i>
+        <a class='bx bxl-youtube' style='color:#eb0000'></a>Youtube
+       </div>
+        <div class="s">
+            <input type="search" placeholder="Search">
+            <i class='bx bx-search' style='color:#171616'  ></i>
+        </div>
+        <div class="m">
+        <i class='bx bxs-microphone'></i>
+        </div>
+        <div class="pr">
+            <i class='bx bxs-video-plus' style='color:#e51212'  ></i>
+            <i class='bx bxs-widget'></i>
+            <i class='bx bxs-bell'></i>
+            <img src="mfs" alt="">
+        </div>
+    </div>
+    <div class="sid">
+        <i class='bx bxs-home'> HOME</i>
+        <i class='bx bx-play-circle'>VIDEO</i>
+        <i class='bx bx-collection'>SUBSCRIBE</i>
+        <hr>
+        <p>You ></p>
+        <i class='b bxs-videos'>SHORTS</i>
+        <i class='bx bx-history'>HISTORY</i>
+        <i class='bx bxs-playlist'>PLAYLIST</i>
+        <hr>
+
+        <div class="play">
+            <p>Explore</p>
+            <i class='bx bxs-hot'>Trending</i>
+            <i class='bx bx-shopping-bag' >Shopping</i>
+            <i class='bx bxs-music' >Music</i>
+            <i class='bx bxs-movie-play' >Movies</i>
+            <i class='bx bx-broadcast' style='color:#151313'  >Live</i>
+            <i class='bx bx-joystick'>Gaming</i>
+            <i class='bx bx-news' style='color:#151313' >News</i>
+            <i class='bx bx-trophy' style='color:#151313' >Sports</i>
+            <i class='bx bx-bulb' style='color:#151313' >Course</i>
+            <i class='bx bx-closet'>Fashion & Beauty</i>
+            <i class='bx bx-podcast' style='color:#151313' >podcast</i>
+            
+        </div>
+        <hr>
+        <div class="part">
+            <p>More from YouTube</p>
+            <i class='bx bxl-youtube' style="color:#e51212;"><a style="color:#171616;">YouTube Premium</a></i>
+            <i class='bx bx-play-circle' style='color:#e30e0e'  ><a style="color:#171616;">YouTube music</a></i>
+            <i class='bx bxl-youtube' style='color:#f61212'  ><a style="color:#171616;">YouTube kids</a></i>
+        </div>
+        <hr>
+
+        <div class="e">
+            <i class='bx bx-cog' style='color:#141414'  >Settings</i>
+            <i class='bx bxs-flag-alt' style='color:#141414' >Report History</i>
+            <i class='bx bx-question-mark'>Help</i>
+            <i class='bx bx-message-alt-error'>Send Feedback</i>
+
+        </div>
+    </div>
+    
+    <div class="f-header">
+    <p>All</p>
+    <p>Music</p>
+    <p>Web Development</p>
+    <p>Mixes</p>
+    <p>App Development</p>
+    <p>Data Structure</p>
+    <p>Data Science</p>
+    <p>Cakes</p>
+    <p>Kalki 2898AD</p>
+    <p>Minnions</p>
+    <i class='bx bxs-right-arrow'></i>
+    </div>
+   
+    <div class="ads">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BXKkIMEFfRCIrJvAw5M7zy2P8vlf-ZYSVw&s">
+    </div>
+    <div class="video">
+        <a href="https://youtu.be/z0n1aQ3IxWI?si=jx2N2qt632-ERT83" target="_blank">
+            <img src="https://api.reliasoftware.com/uploads/web_development_is_important_176fa0618e.jpg" alt="">
+        </a>
+    </div>
+</body>
+</html>
