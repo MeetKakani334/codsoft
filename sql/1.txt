@@ -28,3 +28,42 @@ ans)SELECT
   (SELECT AVG(salary) FROM employee) AS average_salary
 FROM 
   employee WHERE department = 'techincal dipartment';
+
+
+
+  queris of dml (data manipulation laguage)
+  1, select      : for selecting data from database
+  2, update      : for updating data in database
+  3, delete      : for deleting data frome database
+  4, insert into : for adding new data in database
+
+  queris od ddl (data defination laguage)
+  1, create database  : for creating new database.
+  2, alter database   : for modify database.
+  3, create tabel     : for creating new tabel.
+  4, alter tabel      : for make modification in tabel.
+  5, drop tabel       : for delete tabel.
+  6, create index     : for creating a new index.
+  7, drop index       : for delete an index.
+
+  operators
+  1.compertional operators
+  1.1 : <
+  1.2 : >
+  1.3 : <= 
+  1.4 : >=
+  1.5 : ==
+  1.6 : !=
+
+  2.logical operators
+  2.1 : AND (All conditions are true)
+  2.2 : OR  (At least one conditions must be true)
+  2.3 : NOT (conditions must be reverted)
+
+  key of sql
+
+  1.primary key :- for perform all operation of a single tabel.and we can use that key only once in a once table
+  2.foreign key :- for get reference from parent table to child table.
+                   so that key is also known as referenceial key.
+                   we can use foreign key multipul time on a tabel.
+
