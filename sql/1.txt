@@ -67,3 +67,21 @@ FROM
                    so that key is also known as referenceial key.
                    we can use foreign key multipul time on a tabel.
 
+Tuple eroor
+1)
+if True
+    print("Hello, World!")
+
+2)
+print(x)
+
+3)
+name = "John"
+age = 30
+print("My name is " + name + "And My Age Is" + age)
+
+4)
+my_list = [1, 2, 3]
+print(my_list[5])
+
+
