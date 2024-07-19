@@ -69,3 +69,20 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+/*
+SELECT 
+  customers_id, 
+  first_name, 
+  last_name, 
+  SUM(totalamount)
+FROM 
+  customers 
+left JOIN orders ON customers_id = customer_id 
+GROUP BY 
+  customers_id, 
+  first_name, 
+  last_name 
+ORDER BY 
+  customers_id 
+  */
