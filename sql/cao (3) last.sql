@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2024 at 09:23 PM
+-- Generation Time: Jul 21, 2024 at 06:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,12 @@ INSERT INTO `customers` (`customers_id`, `first_name`, `last_name`, `email`) VAL
 (2, 'meet', 'kakani', 'kakani2@gmail.com'),
 (3, 'manav', 'kakani', 'manav@gmail.com'),
 (4, 'jay', 'kumar', 'kumarjay@gmail.com'),
-(5, 'raj', 'chauhan', 'rajchauhan@gmail.com');
+(5, 'raj', 'chauhan', 'rajchauhan@gmail.com'),
+(6, 'krish', 'chauhan', 'kri@gmail.com'),
+(7, 'ronak', 'darjii', 'ron@gmail.com'),
+(8, 'devang', 'parekh', 'devang@gmail.com'),
+(9, 'dharmik', 'patel', 'dharmik@gmail.com'),
+(10, 'yagnik', 'sakariya', 'kano@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -63,10 +68,16 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `customer_id`, `order_date`, `totalamount`) VALUES
-(1, 1, '2022-05-25', 250.00),
+(1, 6, '2022-05-25', 250.00),
 (2, 3, '2023-06-28', 300.00),
 (3, 1, '2024-08-05', 800.00),
-(4, 2, '2024-09-25', 500.00);
+(4, 2, '2024-09-25', 500.00),
+(5, 4, '2024-07-01', 300.00),
+(6, 5, '2024-07-10', 200.00),
+(7, 7, '2024-07-24', 50.00),
+(8, 9, '2024-05-22', 500.00),
+(9, 10, '2024-03-12', 600.00),
+(10, 8, '2024-02-13', 250.00);
 
 -- --------------------------------------------------------
 
@@ -94,7 +105,16 @@ INSERT INTO `order_details` (`order_detail_id`, `orders_id`, `products_id`, `qua
 (5, 2, 5, 1, 50),
 (6, 3, 3, 2, 400),
 (7, 4, 4, 2, 50),
-(8, 4, 3, 1, 400);
+(8, 4, 3, 1, 400),
+(9, 5, 2, 1, 200),
+(10, 5, 1, 1, 100),
+(11, 6, 2, 1, 200),
+(12, 7, 5, 1, 50),
+(13, 8, 6, 1, 500),
+(14, 9, 1, 1, 100),
+(15, 9, 6, 1, 500),
+(16, 10, 5, 1, 50),
+(17, 10, 1, 2, 100);
 
 -- --------------------------------------------------------
 
@@ -117,7 +137,8 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_price`) VALUES
 (2, 'Pvp Door', 200),
 (3, 'Pvc Penel Wall', 400),
 (4, 'scroo', 50),
-(5, 'scroo nut', 50);
+(5, 'scroo nut', 50),
+(6, 'bed', 500);
 
 --
 -- Indexes for dumped tables
@@ -171,6 +192,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-

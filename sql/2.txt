@@ -1,0 +1,83 @@
+/* task 1
+SELECT 
+  customers_id, 
+  first_name, 
+  last_name, 
+  SUM(totalamount)
+FROM 
+  customers 
+left JOIN orders ON customers_id = customer_id 
+GROUP BY 
+  customers_id, 
+  first_name, 
+  last_name 
+ORDER BY 
+  customers_id 
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+/* task 2.1
+SELECT 
+customers_id, 
+first_name, 
+last_name, 
+COUNT(order_id)AS Total_Order 
+FROM 
+customers 
+LEFT JOIN orders on customers_id = customer_id 
+GROUP BY customers_id,first_name,last_name 
+ORDER BY `Total_Order`
+*/
+
+/* task 2.2
+SELECT 
+customers_id, 
+first_name, 
+last_name, 
+sum(totalamount)AS Total_Order 
+FROM 
+customers 
+LEFT JOIN orders on customers_id = customer_id 
+GROUP BY customers_id,first_name,last_name 
+ORDER BY `Total_Order`
+*/
+
+/* task 2.3
+SELECT 
+product_id,
+product_name,
+COUNT(order_detail_id)
+FROM products
+LEFT JOIN order_details on product_id = products_id
+GROUP BY product_id,product_name
+ORDER BY product_id;
+*/
+
+
+/* task 2.4
+SELECT customers_id ,first_name , last_name,
+sum(totalamount) as total 
+FROM customers
+LEFT JOIN orders ON customers_id = customer_id
+GROUP BY customers_id ,first_name ,last_name
+ORDER BY total DESC
+LIMIT 5;
+*/
+
+
