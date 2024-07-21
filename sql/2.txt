@@ -80,4 +80,28 @@ ORDER BY total DESC
 LIMIT 5;
 */
 
+/* task 2..5 
+SELECT order_date , 
+sum(totalamount) 
+FROM orders 
+GROUP BY order_date 
+ORDER BY order_date 
+*/
+
+/* task 2.6
+SELECT product_id ,product_name,
+sum( quantity * price )
+from products
+LEFT JOIN order_details ON product_id = products_id
+GROUP BY product_id,product_name
+*/
+/* task 2.7
+SELECT first_name,last_name,order_date
+FROM customers
+LEFT JOIN orders ON customer_id = customers_id
+LEFT JOIN order_details ON order_id = orders_id
+LEFT JOIN products ON product_id = products_id
+WHERE product_name = "Pvc Penel Wall"
+ORDER BY first_name,last_name,order_date
+*/
 
