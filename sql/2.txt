@@ -1,4 +1,4 @@
-/* task 1
+task 1
 SELECT 
   customers_id, 
   first_name, 
@@ -13,16 +13,6 @@ GROUP BY
   last_name 
 ORDER BY 
   customers_id 
-  */
-
-
-
-
-
-
-
-
-
 
 
 
@@ -32,7 +22,7 @@ ________________________________________________________________________________
 
 
 
-/* task 2.1
+task 2.1
 SELECT 
 customers_id, 
 first_name, 
@@ -43,9 +33,9 @@ customers
 LEFT JOIN orders on customers_id = customer_id 
 GROUP BY customers_id,first_name,last_name 
 ORDER BY `Total_Order`
-*/
 
-/* task 2.2
+
+task 2.2
 SELECT 
 customers_id, 
 first_name, 
@@ -56,9 +46,9 @@ customers
 LEFT JOIN orders on customers_id = customer_id 
 GROUP BY customers_id,first_name,last_name 
 ORDER BY `Total_Order`
-*/
 
-/* task 2.3
+
+task 2.3
 SELECT 
 product_id,
 product_name,
@@ -67,10 +57,10 @@ FROM products
 LEFT JOIN order_details on product_id = products_id
 GROUP BY product_id,product_name
 ORDER BY product_id;
-*/
 
 
-/* task 2.4
+
+task 2.4
 SELECT customers_id ,first_name , last_name,
 sum(totalamount) as total 
 FROM customers
@@ -78,24 +68,24 @@ LEFT JOIN orders ON customers_id = customer_id
 GROUP BY customers_id ,first_name ,last_name
 ORDER BY total DESC
 LIMIT 5;
-*/
 
-/* task 2..5 
+
+ task 2..5 
 SELECT order_date , 
 sum(totalamount) 
 FROM orders 
 GROUP BY order_date 
 ORDER BY order_date 
-*/
 
-/* task 2.6
+
+task 2.6
 SELECT product_id ,product_name,
 sum( quantity * price )
 from products
 LEFT JOIN order_details ON product_id = products_id
 GROUP BY product_id,product_name
-*/
-/* task 2.7
+
+ task 2.7
 SELECT first_name,last_name,order_date
 FROM customers
 LEFT JOIN orders ON customer_id = customers_id
@@ -103,5 +93,23 @@ LEFT JOIN order_details ON order_id = orders_id
 LEFT JOIN products ON product_id = products_id
 WHERE product_name = "Pvc Penel Wall"
 ORDER BY first_name,last_name,order_date
-*/
 
+
+_____________________________________________________________________________________________________________________________________________________________________________
+
+
+task 3.1
+SELECT First_name,Last_name,Title
+FROM book
+LEFT JOIN authors_ ON Author_id = Authors_id
+
+task 3.2
+SELECT Title,
+COUNT(Books_id)
+FROM borrowers
+LEFT JOIN book ON Books_id = Book_id
+GROUP BY Title
+ORDER BY Books_id 
+LIMIT 1;
+
+task 3.4
