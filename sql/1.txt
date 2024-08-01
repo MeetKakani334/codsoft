@@ -85,3 +85,58 @@ my_list = [1, 2, 3]
 print(my_list[5])
 
 
+
+
+
+* * * * 
+  * * * * * * 
+      * * * * * * * *
+          * * * * * * * * * *
+      * * * * * * * *
+  * * * * * *
+* * * *
+
+a=2>print"hii"<"" 
+
+1 4
+2  
+4
+6
+4
+2
+1
+
+
+
+
+# aug special get 40%  off on All graphice desine servici this month only - dont miis out! 
+    # service
+    # 1. logo desine 2. branding 3.flyers 4.posters 5.sociyalmidiya graphices 6. uxui desine
+    # 6353706862
+    # Manav Kakani
+    # manav6428@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+      * * * * 
+    *         *
+  *             *
+*                 *
+  *             *
+    *         *
+      * * * *
+
+
+
+
+
+
+      
