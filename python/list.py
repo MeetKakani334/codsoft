@@ -1,9 +1,15 @@
-a = [1,11,34,67,11,67,2,99,67,1,45,51]
-b = []
-
-for i in a :
-    if i not in b:
-        b.append(i)
-        
-        
-print(b)
+def bi(n):
+    a, b = 0, 1
+    for i in range(n):
+        if i == 0:
+            arry.append(a)
+        elif i == 1:
+            arry.append(b)
+        else:
+            # c = a + b
+            a , b = b , a + b
+            arry.append(b)
+n = 10
+arry = []
+bi(n)
+print(arry)
