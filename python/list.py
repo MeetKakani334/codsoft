@@ -9,7 +9,7 @@ def bi(n):
             # c = a + b
             a , b = b , a + b
             arry.append(a)
-n = 11
+n = 10
 arry = []
 bi(n)
 print(arry)
