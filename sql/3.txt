@@ -1,0 +1,85 @@
+user table :- id name pass emali ad.photo add father_number user_photo
+login table:- user name , user password
+packages table :- 3 pakges
+girls and boys pg //based on gender selection
+booking table
+
+common table
+
+category table 
+gallary table 
+customer show table (kitne bache hay room's)
+contact table
+review table
+
+
+
+Peacock Feathers
+#c0f862	(192,248,98)
+#10a690	(16,166,144)
+#1166a3	(17,102,163)
+#3d4987	(61,73,135)
+#402b6d	(64,43,109)
+
+
+Peacock Butterfly
+#e03b02	(224,59,2)
+#914804	(145,72,4)
+#fcd04a	(252,208,74)
+#6c73b7	(108,115,183)
+#a1a6fc	(161,166,252)
+
+
+Peacock Topaz
+#288156	(40,129,86)
+#5a3975	(90,57,117)
+#d95aea	(217,90,234)
+#77ee51	(119,238,81)
+#1b1f33	(27,31,51)
+
+
+Peacock
+#fbfbf3	(251,251,243)
+#b9dec9	(185,222,201)
+#3b92a1	(59,146,161)
+#080d47	(8,13,71)
+#381009	(56,16,9)
+
+
+peacock tail
+#08115a	(8,17,90)
+#007081	(0,112,129)
+#10b285	(16,178,133)
+#3dd46d	(61,212,109)
+#348757	(52,135,87)
+
+
+PARK COLOR:-
+
+Fall :- #CA3619,#F1853A,#F7A55E,#802037,#540D028
+Pizza party :- 3661A1D,#95340A,#DC8855,#E5C6BD,#989872
+Coffee beans :- #A76A3A,#C08857,#D6AA82,#5B4134,#422F25
+Farmers market :- #7A9364,#C6D48D,#FAB375,#E58A44,#7D5733
+
+
+
+
+
+
+common
+
+Blue, green, and orange :- #4AAFD5,#91B187,#E7A339
+Raspberry pink and dark chocolate :- #B2456E,#FBEAE7,#552619
+Sage and pine green :- #EDF4F2,#7C8363,#31473A
+Light blue and cobalt :- #CADCFC,#8AB6F9,#00246B
+Primary colors with a bold twist :- #81CAD6,#EDCD44,#DC3E26
+Sunshine yellow, nude, deep pink, eggplant :- #FAEF7C,#E3CCB2,#E26274,#78589F
+Dark teal, amber, squash, vermillion :- #3A6D80,#F3CD53,#D56729,#9D402D
+
+
+
+
+
+
+color pattern:
+https://cdn.logojoy.com/wp-content/uploads/20220519172940/tints-and-shades-color-wheels-e1652995815104-1024x417.jpg
