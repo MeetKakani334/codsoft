@@ -8,7 +8,7 @@ def bi(n):
         else:
             # c = a + b
             a , b = b , a + b
-            arry.append(a)
+            arry.append(b)
 n = 10
 arry = []
 bi(n)
