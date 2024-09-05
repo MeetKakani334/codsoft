@@ -12,7 +12,7 @@ for i in range(row):
     else :
            print("*"+" "*(row-2)+"*")
 
-
+# private
 # rows = 4
 # for i in range(rows):
 #      if i >= 0 or i <= rows+2:
