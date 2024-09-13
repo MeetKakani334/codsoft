@@ -1,3 +1,6 @@
+from pyclbr import Class
+
+
 def voting_system():
     while True:
 
@@ -56,8 +59,3 @@ def voting_system():
         break
 
 voting_system()
-
-
-
-
-
