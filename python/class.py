@@ -42,4 +42,3 @@ my_result.shoe_result()
 
 
 
-
