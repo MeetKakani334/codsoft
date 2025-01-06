@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 # /interface
 
 # class Bird:
@@ -42,24 +36,7 @@
 
 
 
-# pre
 
-# class daru:
-#     def barnd(self):
-#         return "blackdog"
-
-# class wiskey:
-#     def barnd(self):
-#         return "Kingfisher"
-    
-# def barn_d(water):
-#     print(water.barnd())
-
-# a1 = daru()
-# a2 = wiskey()
-
-# barn_d(a1)
-# barn_d(a2)
 
 
 
@@ -82,6 +59,26 @@
 # for animals in animal:
 #     print(animals.sound())
 
+
+
+# pre
+
+# class daru:
+#     def barnd(self):
+#         return "blackdog"
+
+# class wiskey:
+#     def barnd(self):
+#         return "Kingfisher"
+    
+# def barn_d(water):
+#     print(water.barnd())
+
+# a1 = daru()
+# a2 = wiskey()
+
+# barn_d(a1)
+# barn_d(a2)
 
 
 
