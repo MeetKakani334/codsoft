@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules and Regulations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            background-color: #37474f;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .rule-list {
+            padding: 10px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #f5f5f5, #e0e0e0);
+            animation: fadeInSlide 1s ease-in-out forwards;
+        }
+        .rule {
+            background: #ffffff;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.3s ease-in-out, background 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s ease-in-out forwards;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .rule:hover {
+            background: #ffa726;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rules and Regulations</h1>
+        <div class="rule-list">
+            <div class="rule">1. Follow all instructions carefully.</div>
+            <div class="rule">2. Respect others and maintain decorum.</div>
+            <div class="rule">3. No unauthorized access to restricted areas.</div>
+            <div class="rule">4. Maintain cleanliness in the premises.</div>
+            <div class="rule">5. Violations will result in appropriate action.</div>
+        </div>
+    </div>
+</body>
+</html>
