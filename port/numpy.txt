@@ -1,0 +1,313 @@
+NumPy Introduction
+
+_____________________________________________________________________________
+
+1) What is NumPy?
+
+NumPy (Numerical Python) is a powerful Python library used for numerical computing.
+
+It provides support for large, multi-dimensional arrays and matrices, 
+
+along with a collection of mathematical functions to operate on them efficiently.
+
+
+(2) def:-
+
+NumPy is a Python library used for working with arrays.
+
+It also has functions for working in domain of linear algebra, fourier transform, and matrices.
+
+NumPy was created in 2005 by Travis Oliphant. It is an open source project and you can use it freely.
+
+NumPy stands for Numerical Python.
+
+
+Extra:-
+
+What is Numerical Computing?
+
+Numerical computing is a field of computer science and mathematics that focuses on designing algorithms 
+to solve mathematical problems using numerical approximations.
+
+
+What is Matrices?
+
+A matrix is a rectangular array of numbers, symbols, or expressions arranged in rows and columns.
+It is a fundamental concept in mathematics, used extensively in linear algebra, computer science, physics, and machine learning.
+
+
+_____________________________________________________________________________
+
+
+3) Why Use NumPy?
+
+In Python we have lists that serve the purpose of arrays, but they are slow to process.
+
+NumPy aims to provide an array object that is up to 50x faster than traditional Python lists.
+
+The array object in NumPy is called ndarray, it provides a lot of supporting functions that make working with ndarray very easy.
+
+Arrays are very frequently used in data science, where speed and resources are very important.
+
+Faster than Python lists – Uses optimized C code under the hood.
+
+Supports multi-dimensional arrays – Handles large datasets with ease.
+
+Mathematical operations – Provides built-in functions like mean(), sum(), dot(), etc.
+
+Broadcasting – Allows arithmetic operations on arrays of different shapes without loops.
+
+Integration with other libraries – Used with Pandas, SciPy, Matplotlib, etc.
+
+_____________________________________________________________________________
+
+
+4) Why is NumPy Faster Than Lists?
+
+NumPy arrays are stored at one continuous place in memory unlike lists, so processes can access and manipulate them very efficiently.
+
+This behavior is called locality of reference in computer science.
+
+This is the main reason why NumPy is faster than lists. Also it is optimized to work with latest CPU architectures.
+
+
+_____________________________________________________________________________
+
+5) Why is NumPy faster than Python lists?
+
+Python Lists vs NumPy Arrays
+
+Python lists store elements as separate objects in memory, each with its own metadata.
+
+NumPy arrays store elements in a continuous block of memory, making data access much faster.
+
+Optimized C Implementation
+
+NumPy is written in C, a low-level programming language that runs much faster than Python.
+
+When you perform operations like addition, multiplication, or sum, NumPy uses precompiled C functions instead of Python loops.
+
+Vectorized Operations (No Loops)
+
+In Python lists, operations involve looping through each element manually.
+
+NumPy avoids loops by applying operations to entire arrays at once (vectorization), which is much faster.
+
+_____________________________________________________________________________
+
+
+6)"Supports multi-dimensional arrays – Handles large datasets with ease."
+
+This means that NumPy can efficiently work with arrays that have multiple dimensions (1D, 2D, 3D, or more) and can process large amounts of data quickly.
+
+ What are Multi-Dimensional Arrays?
+A 1D array is like a simple list of numbers.
+
+A 2D array is like a table (rows and columns).
+
+A 3D array is like a cube (stack of 2D arrays).
+
+Higher dimensions (4D, 5D, etc.) can be used for advanced data processing like deep learning.
+
+ Example:
+1D Array (Like a List)
+
+import numpy as np
+arr1d = np.array([10, 20, 30])
+print(arr1d)
+
+Output: [10 20 30]
+
+_____________________________________________________________________________
+
+
+2D Array (Like a Table)
+
+arr2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr2d)
+
+Output:
+  [[1 2 3]
+  [4 5 6]]
+
+_____________________________________________________________________________
+
+3D Array (Like a Cube)
+python
+Copy
+Edit
+arr3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+print(arr3d)
+
+Output:
+ [
+   [ 
+    [1 2]
+    [3 4]
+   ]
+   [
+    [5 6]
+    [7 8]
+   ]
+ ]
+
+_____________________________________________________________________________
+
+
+(6.2) Why is NumPy Good for Large Datasets?
+Efficient Storage – NumPy arrays use less memory than Python lists.
+
+Fast Processing – Uses optimized C functions instead of Python loops.
+
+Convenient Operations – Easily apply mathematical functions to entire arrays.
+
+Supports Broadcasting – Can perform operations on arrays of different shapes without extra loops.
+
+
+_____________________________________________________________________________
+
+(7) What is NDIM in NUMPY :-
+
+The nd in NumPy stands for N-dimensional, 
+referring to multi-dimensional arrays (ndarray), 
+which are the core data structure in NumPy.
+
+
+1D array (vector)
+A = np.array([1, 2, 3])
+print(A.ndim)  
+
+Output: 1
+
+2D array (matrix)
+B = np.array([[1, 2, 3], [4, 5, 6]])
+print(B.ndim) 
+
+Output: 2
+
+3D array (tensor)
+C = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+print(C.ndim)
+
+Output: 3
+
+
+_____________________________________________________________________________
+
+
+
+8) How to start NUMPY in your compiler:-
+
+pip install numpy
+
+_____________________________________________________________________________
+
+
+9)Creating NumPy Arrays
+
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)  
+
+Output: [1 2 3 4 5]
+
+_____________________________________________________________________________
+
+10) Array Properties
+
+print(arr.ndim)  ( Number of dimensions )
+print(arr.shape) ( Shape of the array )
+print(arr.size)  ( Number of elements )
+print(arr.dtype) ( Data type )
+
+_____________________________________________________________________________
+
+
+11)Creating Special Arrays
+
+np.zeros((3, 3))       ( 3x3 array of zeros )
+np.ones((2, 4))        ( 2x4 array of ones )
+np.eye(4)              ( Identity matrix)
+np.linspace(0, 10, 5)  ( 5 evenly spaced numbers between 0 and 10 )
+np.arange(1, 10, 2)    ( [1, 3, 5, 7, 9] )
+
+_____________________________________________________________________________
+
+12)Basic Operations
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+print(a + b)    ( [5 7 9] )
+print(a * b)    ( [4 10 18] )
+print(a - b)    ( [-3 -3 -3] )
+print(a / b)    ( [0.25 0.4  0.5 ] )
+print(a.dot(b)) ( Dot product (1*4 + 2*5 + 3*6 = 32) )
+_____________________________________________________________________________
+
+
+13) Indexing & Slicing
+
+arr = np.array([10, 20, 30, 40, 50])
+print(arr[1])    # 20
+print(arr[1:4])  # [20 30 40]
+print(arr[::-1]) # Reverse array: [50 40 30 20 10]
+
+
+
+For 2D arrays:
+
+arr2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr2d[1, 2]) # Element at row 1, column 2 (Output: 6)
+print(arr2d[:, 1]) # Second column: [2 5]
+
+_____________________________________________________________________________
+
+14)Aggregation Functions
+
+arr = np.array([1, 2, 3, 4, 5])
+
+print(arr.sum())    # 15
+print(arr.mean())   # 3.0
+print(arr.min())    # 1
+print(arr.max())    # 5
+print(arr.std())    # Standard deviation
+
+_____________________________________________________________________________
+
+15)Reshaping & Transposing
+
+=> In NumPy, reshaping and transposing help in changing the structure of arrays without modifying their data.
+
+arr = np.arange(1, 7).reshape(2, 3)
+print(arr)
+# [[1 2 3]
+#  [4 5 6]]
+
+print(arr.T) # Transpose (swap rows and columns)
+
+_____________________________________________________________________________
+
+15.1) What is Reshaping :-
+Reshaping (Changing Dimensions)
+Reshaping changes the shape of an array while keeping its total number of elements the same.
+
+Syntax:
+array.reshape(new_shape)
+
+The total elements must remain the same before and after reshaping.
+
+-1 can be used as a placeholder to automatically infer the correct dimension.
+
+_____________________________________________________________________________
+
+
+16)What is Transposing:-
+Transposing (Swapping Axes)
+Transposing flips the dimensions of an array (like rotating a matrix).
+
+Syntax:
+array.T  # Quick way to transpose
+np.transpose(array)
