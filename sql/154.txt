@@ -1,0 +1,15 @@
+<div class="container">
+        <h1>PG Amenities</h1>
+        <h1>Amenities of Standard Room</h1>
+        <div class="amenities">
+            <div class="amenity"><div class="icon">🗄️</div><h3>Wardrobe</h3></div>
+            <div class="amenity"><div class="icon">🚽</div><h3>1 Bathroom</h3></div>
+            <div class="amenity"><div class="icon">🛏️</div><h3>3 Beds</h3></div>
+            <div class="amenity"><div class="icon">📶</div><h3>WiFi</h3></div>
+            <div class="amenity"><div class="icon">💧</div><h3>Water Purifier</h3></div>
+            <div class="amenity"><div class="icon">❄️</div><h3>Air Conditioner</h3></div>
+            <div class="amenity"><div class="icon">🔥</div><h3>Geyser</h3></div>
+            <div class="amenity"><div class="icon">📖</div><h3>Study Table</h3></div>
+        </div>
+        <a href="javascript:history.back()" class="back-button">Back</a>
+    </div>

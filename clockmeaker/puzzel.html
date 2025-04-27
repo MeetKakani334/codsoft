@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Photo Puzzle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        #puzzleContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            border: 5px solid white;
+            padding: 10px;
+            background-color: black;
+        }
+        .piece {
+            width: 100px;
+            height: 100px;
+            background-size: 300px 300px;
+            cursor: pointer;
+            border: 1px solid white;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            animation: fireworkExplosion 1.5s ease-out infinite;
+            opacity: 0;
+        }
+        @keyframes fireworkExplosion {
+            0% { opacity: 1; transform: scale(1); }
+            50% { transform: scale(5) translateY(-150px) translateX(50px); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+    </style>
+</head>
+<body>
+    <h2>Arrange the puzzle to reveal the message!</h2>
+    <div id="puzzleContainer"></div>
+    <div id="message">🎉 Happy Birthday Buchii! I hope you always keep smiling 😊 🎉</div>
+    
+    <script>
+        const puzzleContainer = document.getElementById("puzzleContainer");
+        const message = document.getElementById("message");
+        const imageSrc = "img/2.png";
+        
+        let pieces = [];
+        for (let i = 0; i < 9; i++) {
+            let piece = document.createElement("div");
+            piece.classList.add("piece");
+            piece.style.backgroundImage = `url(${imageSrc})`;
+            piece.style.backgroundPosition = `-${(i % 3) * 100}px -${Math.floor(i / 3) * 100}px`;
+            piece.dataset.index = i;
+            piece.draggable = true;
+            pieces.push(piece);
+        }
+        
+        pieces.sort(() => Math.random() - 0.5);
+        pieces.forEach(piece => puzzleContainer.appendChild(piece));
+        
+        let draggedItem = null;
+        document.querySelectorAll(".piece").forEach(piece => {
+            piece.addEventListener("dragstart", () => {
+                draggedItem = piece;
+            });
+
+            piece.addEventListener("dragover", (e) => {
+                e.preventDefault();
+            });
+
+            piece.addEventListener("drop", (e) => {
+                e.preventDefault();
+                if (draggedItem !== piece) {
+                    let tempIndex = draggedItem.dataset.index;
+                    draggedItem.dataset.index = piece.dataset.index;
+                    piece.dataset.index = tempIndex;
+                    
+                    puzzleContainer.innerHTML = "";
+                    pieces.sort((a, b) => a.dataset.index - b.dataset.index);
+                    pieces.forEach(p => puzzleContainer.appendChild(p));
+                    
+                    if (pieces.every((p, i) => p.dataset.index == i)) {
+                        message.style.opacity = 1;
+                        startFireworks();
+                    }
+                }
+            });
+        });
+
+        function startFireworks() {
+            setInterval(createFirework, 300);
+        }
+
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("firework");
+            document.body.appendChild(firework);
+
+            const posX = Math.random() * window.innerWidth;
+            const posY = Math.random() * window.innerHeight;
+            firework.style.left = `${posX}px`;
+            firework.style.top = `${posY}px`;
+            
+            setTimeout(() => firework.remove(), 1500);
+        }
+    </script>
+</body>
+</html>

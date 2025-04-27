@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Buchii!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #happyBirthday {
+            font-family: 'Arial', sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+            text-align: center;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8);
+            animation: showText 2s forwards;
+            position: absolute;
+        }
+
+        @keyframes showText {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .firework {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            opacity: 1;
+            animation: fireworkExplosion 2s ease-out forwards;
+        }
+
+        @keyframes fireworkExplosion {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(4) translateY(-200px);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        .small-firework {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: yellow;
+            border-radius: 50%;
+            opacity: 1;
+            animation: smallFireworkAnimation 1.8s ease-out forwards;
+        }
+
+        @keyframes smallFireworkAnimation {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+                transform: translate(var(--x), var(--y));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="happyBirthday">🎉 Happy Birthday Buchii! 🎉</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(startContinuousFireworks, 2000);
+        });
+
+        function startContinuousFireworks() {
+            setInterval(createFirework, 600);
+        }
+
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("firework");
+            document.body.appendChild(firework);
+
+            const colors = ["#FF5733", "#FF4500", "#FFD700", "#32CD32", "#1E90FF", "#FF1493", "#9400D3"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            firework.style.backgroundColor = randomColor;
+
+            const size = Math.random() * 30 + 20;
+            firework.style.width = size + "px";
+            firework.style.height = size + "px";
+
+            const posX = Math.random() * window.innerWidth;
+            const posY = Math.random() * (window.innerHeight - 200) + 100;
+
+            firework.style.left = posX + "px";
+            firework.style.top = posY + "px";
+
+            firework.style.animation = "fireworkExplosion 2s ease-out forwards";
+
+            createSmallFireworks(posX, posY);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 2000);
+        }
+
+        function createSmallFireworks(posX, posY) {
+            const numSmallFireworks = Math.floor(Math.random() * 10) + 5;
+
+            for (let i = 0; i < numSmallFireworks; i++) {
+                const smallFirework = document.createElement("div");
+                smallFirework.classList.add("small-firework");
+                document.body.appendChild(smallFirework);
+
+                const colors = ["#FF5733", "#FF4500", "#FFD700", "#32CD32", "#1E90FF", "#FF1493", "#9400D3"];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                smallFirework.style.backgroundColor = randomColor;
+
+                const angle = Math.random() * 360;
+                const distance = Math.random() * 250 + 100;
+                const xOffset = Math.cos(angle) * distance;
+                const yOffset = Math.sin(angle) * distance;
+
+                smallFirework.style.left = posX + "px";
+                smallFirework.style.top = posY + "px";
+
+                smallFirework.style.setProperty("--x", xOffset + "px");
+                smallFirework.style.setProperty("--y", yOffset + "px");
+
+                smallFirework.style.animation = "smallFireworkAnimation 1.8s ease-out forwards";
+
+                setTimeout(() => {
+                    smallFirework.remove();
+                }, 1800);
+            }
+        }
+    </script>
+
+</body>
+</html>
