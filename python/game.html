@@ -1,0 +1,642 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tik Tac Toe - 2 Player</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 5px;
+    }
+    .cell {
+      background: #222;
+      border: 2px solid #444;
+      font-size: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .cell:hover {
+      background: #333;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+    .restart-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #00f2ea;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tik Tac Toe</h1>
+  <div class="board" id="board"></div>
+  <div class="message" id="message">Player ❌ Turn</div>
+  <button class="restart-btn" onclick="startGame()">Restart</button>
+
+  <script>
+    const board = document.getElementById('board');
+    const message = document.getElementById('message');
+    let cells = [];
+    let currentPlayer = 'X';
+    let gameActive = true;
+
+    function startGame() {
+      board.innerHTML = '';
+      cells = [];
+      gameActive = true;
+      currentPlayer = 'X';
+      message.textContent = 'Player ❌ Turn';
+
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.dataset.index = i;
+        cell.addEventListener('click', handleClick);
+        board.appendChild(cell);
+        cells.push('');
+      }
+    }
+
+    function handleClick(e) {
+      const index = e.target.dataset.index;
+      if (cells[index] || !gameActive) return;
+
+      cells[index] = currentPlayer;
+      e.target.textContent = currentPlayer === 'X' ? '❌' : '⭕';
+
+      if (checkWinner()) {
+        message.textContent = `🎉 Player ${currentPlayer === 'X' ? '❌' : '⭕'} Wins!`;
+        gameActive = false;
+        return;
+      }
+
+      if (!cells.includes('')) {
+        message.textContent = "It's a Draw!";
+        gameActive = false;
+        return;
+      }
+
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      message.textContent = `Player ${currentPlayer === 'X' ? '❌' : '⭕'} Turn`;
+    }
+
+    function checkWinner() {
+      const winCombos = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+
+      return winCombos.some(combo => {
+        const [a, b, c] = combo;
+        return cells[a] && cells[a] === cells[b] && cells[a] === cells[c];
+      });
+    }
+
+    startGame();
+  </script>
+</body>
+</html> -->
+
+<!-- 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stone Paper Scissor - 2 Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .turn {
+      font-size: 1.5rem;
+      margin: 20px;
+    }
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      font-size: 1.5rem;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #00f2ea;
+      color: black;
+      transition: 0.2s ease;
+    }
+    .btn:hover {
+      background: #00c4bb;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 1.8rem;
+    }
+    .restart-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: red;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Stone 🪨 Paper 📄 Scissor ✂️ (2 Player)</h1>
+  <div class="turn" id="turnText">Player 1, make your move!</div>
+
+  <div class="choices" id="choiceButtons">
+    <button class="btn" onclick="makeMove('rock')">🪨 Stone</button>
+    <button class="btn" onclick="makeMove('paper')">📄 Paper</button>
+    <button class="btn" onclick="makeMove('scissors')">✂️ Scissor</button>
+  </div>
+
+  <div class="result" id="resultText"></div>
+  <button class="restart-btn" onclick="restartGame()">Play Again</button>
+
+  <script>
+    let player1Choice = "";
+    let player2Choice = "";
+    let currentPlayer = 1;
+
+    function makeMove(choice) {
+      if (currentPlayer === 1) {
+        player1Choice = choice;
+        currentPlayer = 2;
+        document.getElementById('turnText').textContent = "Player 2, make your move!";
+        document.getElementById('resultText').textContent = "";
+      } else {
+        player2Choice = choice;
+        checkWinner();
+      }
+    }
+
+    function emoji(choice) {
+      return choice === 'rock' ? '🪨' :
+             choice === 'paper' ? '📄' : '✂️';
+    }
+
+    function checkWinner() {
+      let result = `Player 1 chose ${emoji(player1Choice)}<br>Player 2 chose ${emoji(player2Choice)}<br>`;
+
+      if (player1Choice === player2Choice) {
+        result += "It's a Draw!";
+      } else if (
+        (player1Choice === "rock" && player2Choice === "scissors") ||
+        (player1Choice === "paper" && player2Choice === "rock") ||
+        (player1Choice === "scissors" && player2Choice === "paper")
+      ) {
+        result += "🎉 Player 1 Wins!";
+      } else {
+        result += "🎉 Player 2 Wins!";
+      }
+
+      document.getElementById('resultText').innerHTML = result;
+      document.getElementById('turnText').textContent = "Game Over!";
+      currentPlayer = 1;
+    }
+
+    function restartGame() {
+      player1Choice = "";
+      player2Choice = "";
+      currentPlayer = 1;
+      document.getElementById('resultText').textContent = "";
+      document.getElementById('turnText').textContent = "Player 1, make your move!";
+    }
+  </script>
+
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temple Run Mini</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #222;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background: linear-gradient(#444, #222);
+      border: 2px solid #00f2ea;
+      border-radius: 10px;
+    }
+
+    #score {
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #restart {
+      display: none;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #00f2ea;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="gameCanvas" width="800" height="400"></canvas>
+<div id="score">Score: 0</div>
+<button id="restart" onclick="startGame()">Restart</button>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+  const scoreDisplay = document.getElementById("score");
+  const restartBtn = document.getElementById("restart");
+
+  let player = { x: 100, y: 310, width: 50, height: 50, color: "#00f2ea", vy: 0, jumpPower: -15, gravity: 0.8, onGround: true };
+  let obstacles = [];
+  let score = 0;
+  let gameOver = false;
+  let frame = 0;
+
+  function drawPlayer() {
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+  }
+
+  function createObstacle() {
+    const height = 50;
+    const width = 20;
+    obstacles.push({
+      x: canvas.width,
+      y: canvas.height - height - 40,
+      width: width,
+      height: height,
+      color: "#ff4444"
+    });
+  }
+
+  function drawObstacles() {
+    obstacles.forEach(ob => {
+      ctx.fillStyle = ob.color;
+      ctx.fillRect(ob.x, ob.y, ob.width, ob.height);
+    });
+  }
+
+  function updateObstacles() {
+    obstacles.forEach(ob => ob.x -= 5);
+    obstacles = obstacles.filter(ob => ob.x + ob.width > 0);
+  }
+
+  function detectCollision() {
+    for (let ob of obstacles) {
+      if (
+        player.x < ob.x + ob.width &&
+        player.x + player.width > ob.x &&
+        player.y < ob.y + ob.height &&
+        player.y + player.height > ob.y
+      ) {
+        gameOver = true;
+        restartBtn.style.display = "block";
+      }
+    }
+  }
+
+  function updatePlayer() {
+    player.vy += player.gravity;
+    player.y += player.vy;
+
+    if (player.y >= 310) {
+      player.y = 310;
+      player.vy = 0;
+      player.onGround = true;
+    }
+  }
+
+  function drawGround() {
+    ctx.fillStyle = "#444";
+    ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
+  }
+
+  function gameLoop() {
+    if (gameOver) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawGround();
+    drawPlayer();
+    drawObstacles();
+
+    updatePlayer();
+    updateObstacles();
+    detectCollision();
+
+    if (frame % 90 === 0) {
+      createObstacle();
+    }
+
+    score += 1;
+    scoreDisplay.textContent = "Score: " + score;
+
+    frame++;
+    requestAnimationFrame(gameLoop);
+  }
+
+  function startGame() {
+    player.y = 310;
+    player.vy = 0;
+    score = 0;
+    frame = 0;
+    gameOver = false;
+    obstacles = [];
+    restartBtn.style.display = "none";
+    scoreDisplay.textContent = "Score: 0";
+    gameLoop();
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if ((e.code === "Space" || e.key === "ArrowUp") && player.onGround && !gameOver) {
+      player.vy = player.jumpPower;
+      player.onGround = false;
+    }
+  });
+
+  startGame();
+</script>
+
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temple Run Mini with Coins</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      margin: 0 auto;
+      background: linear-gradient(#444, #222);
+      border: 2px solid #00f2ea;
+      border-radius: 10px;
+    }
+
+    #score {
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #restart {
+      display: none;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #00f2ea;
+      color: black;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="gameCanvas" width="800" height="400"></canvas>
+<div id="score">Score: 0</div>
+<button id="restart" onclick="startGame()">Restart</button>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+  const scoreDisplay = document.getElementById("score");
+  const restartBtn = document.getElementById("restart");
+
+  let player = { x: 100, y: 310, width: 50, height: 50, color: "#00f2ea", vy: 0, jumpPower: -15, gravity: 0.8, onGround: true };
+  let obstacles = [];
+  let coins = [];
+  let score = 0;
+  let gameOver = false;
+  let frame = 0;
+
+  function drawPlayer() {
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+  }
+
+  function createObstacle() {
+    const height = 50;
+    const width = 20;
+    obstacles.push({
+      x: canvas.width,
+      y: canvas.height - height - 40,
+      width: width,
+      height: height,
+      color: "#ff4444"
+    });
+  }
+
+  function createCoin() {
+    const size = 20;
+    coins.push({
+      x: canvas.width,
+      y: Math.random() * (canvas.height - 100) + 50,
+      width: size,
+      height: size,
+      color: "gold",
+      collected: false
+    });
+  }
+
+  function drawObstacles() {
+    obstacles.forEach(ob => {
+      ctx.fillStyle = ob.color;
+      ctx.fillRect(ob.x, ob.y, ob.width, ob.height);
+    });
+  }
+
+  function drawCoins() {
+    coins.forEach(coin => {
+      if (!coin.collected) {
+        ctx.beginPath();
+        ctx.fillStyle = coin.color;
+        ctx.arc(coin.x + coin.width / 2, coin.y + coin.height / 2, coin.width / 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.closePath();
+      }
+    });
+  }
+
+  function updateObstacles() {
+    obstacles.forEach(ob => ob.x -= 5);
+    obstacles = obstacles.filter(ob => ob.x + ob.width > 0);
+  }
+
+  function updateCoins() {
+    coins.forEach(coin => coin.x -= 5);
+    coins = coins.filter(coin => coin.x + coin.width > 0 && !coin.collected);
+  }
+
+  function detectCollision() {
+    for (let ob of obstacles) {
+      if (
+        player.x < ob.x + ob.width &&
+        player.x + player.width > ob.x &&
+        player.y < ob.y + ob.height &&
+        player.y + player.height > ob.y
+      ) {
+        gameOver = true;
+        restartBtn.style.display = "block";
+      }
+    }
+
+    coins.forEach(coin => {
+      if (!coin.collected &&
+        player.x < coin.x + coin.width &&
+        player.x + player.width > coin.x &&
+        player.y < coin.y + coin.height &&
+        player.y + player.height > coin.y
+      ) {
+        coin.collected = true;
+        score += 10;
+      }
+    });
+  }
+
+  function updatePlayer() {
+    player.vy += player.gravity;
+    player.y += player.vy;
+
+    if (player.y >= 310) {
+      player.y = 310;
+      player.vy = 0;
+      player.onGround = true;
+    }
+  }
+
+  function drawGround() {
+    ctx.fillStyle = "#444";
+    ctx.fillRect(0, canvas.height - 40, canvas.width, 40);
+  }
+
+  function gameLoop() {
+    if (gameOver) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawGround();
+    drawPlayer();
+    drawObstacles();
+    drawCoins();
+
+    updatePlayer();
+    updateObstacles();
+    updateCoins();
+    detectCollision();
+
+    if (frame % 90 === 0) createObstacle();
+    if (frame % 150 === 0) createCoin();
+
+    score += 1;
+    scoreDisplay.textContent = "Score: " + score;
+
+    frame++;
+    requestAnimationFrame(gameLoop);
+  }
+
+  function startGame() {
+    player.y = 310;
+    player.vy = 0;
+    score = 0;
+    frame = 0;
+    gameOver = false;
+    obstacles = [];
+    coins = [];
+    restartBtn.style.display = "none";
+    scoreDisplay.textContent = "Score: 0";
+    gameLoop();
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if ((e.code === "Space" || e.key === "ArrowUp") && player.onGround && !gameOver) {
+      player.vy = player.jumpPower;
+      player.onGround = false;
+    }
+  });
+
+  startGame();
+</script>
+
+</body>
+</html>

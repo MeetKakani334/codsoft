@@ -49,7 +49,7 @@ The array object in NumPy is called ndarray, it provides a lot of supporting fun
 
 Arrays are very frequently used in data science, where speed and resources are very important.
 
-Faster than Python lists – Uses optimized C code under the hood.
+Faster than Python list – Uses optimized C code under the hood.
 
 Supports multi-dimensional arrays – Handles large datasets with ease.
 

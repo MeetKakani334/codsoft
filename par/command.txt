@@ -1,0 +1,8 @@
+Create Virtual Env in python
+cmd: python -m venv <name of the venv>(e.g tenv)
+
+Start the Virtual env
+cmd: tenv\Scripts\activate
+
+Install Requirements from the file
+cmd: pip install -r requirements.txt

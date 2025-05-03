@@ -1,0 +1,116 @@
+1st 
+
+data = [10, 20, 30, '40', 50]
+
+total = 0
+for num in data:
+    total += int(num)
+
+print("Total:", total)
+
+
+
+2) Using an Index Out of Range
+
+numbers = [1, 2, 3, 4, 5]
+
+for i in range(len(numbers)):
+    print(numbers[i])
+
+
+3)  Modifying a List While Iterating Over It
+
+numbers = [1, 2, 3, 4, 5]
+nlist = []
+
+for num in numbers:
+    if num != 3:
+        nlist.append(num)  # List ko modify kar rahe hain while iterating
+
+print(nlist)
+
+
+
+
+Python Interview Questions:
+
+
+Explain the difference between deepcopy() and copy() in Python.
+
+What are decorators in Python? Provide an example.
+
+What is a lambda function, and how is it different from a regular function?
+
+What is the difference between @staticmethod and @classmethod?
+
+How does Python's garbage collection work?
+
+What is the Global Interpreter Lock (GIL) in Python?
+
+What is the difference between is and == in Python?
+
+What is list comprehension, and how does it differ from a traditional loop?
+
+Explain the concept of Python generators and how they are different from normal functions.
+
+What is the difference between range() and xrange()?
+
+
+
+Django Interview Questions:
+
+
+What is Django, and how is it different from other web frameworks?
+
+What is the purpose of Django’s settings.py file?
+
+Explain Django's ORM and how it works.
+
+What are Django middleware and give some examples?
+
+How does Django handle static files and media files?
+
+Explain Django's request-response cycle.
+
+What is a Django model, and how do you define one?
+
+What is the difference between a CharField and a TextField in Django?
+
+What are Django signals, and how are they used?
+
+What is the purpose of Django’s manage.py file?
+
+How do you optimize Django queries to prevent N+1 query problems?
+
+What is the use of QuerySet in Django?
+
+Explain the difference between ForeignKey, ManyToManyField, and OneToOneField in Django models.
+
+What is Django's Migrations system?
+
+What is Django REST framework, and how does it help in building APIs?
+
+
+
+General Technical Questions:
+
+
+What is the difference between REST and GraphQL APIs?
+
+Explain the concept of database normalization.
+
+What is the difference between SQL and NoSQL databases?
+
+What is the MVC (Model-View-Controller) architecture, and how does Django follow it?
+
+Explain the concept of caching in web development and how to implement it in Django.
+
+What are the security best practices you should follow in a Django application?
+
+How would you handle exceptions in Python?
+
+What are some of the common optimization techniques you use in Python and Django?
+
+What are microservices, and how do they work with Django?
+
+How do you test a Django application?
