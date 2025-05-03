@@ -1,5 +1,0 @@
-razorpay
-setuptools
-django
-runserver
-pillow
